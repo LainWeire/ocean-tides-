@@ -181,7 +181,7 @@ nav ul li:hover {
   z-index: -1;
 }
 
-button {
+button.decorado {
   background: linear-gradient(90deg, #00aaff 0%, #005577 100%);
   color: #fff;
   border: none;
@@ -194,7 +194,79 @@ button {
   transition: background 0.3s, transform 0.2s;
 }
 
-button:hover {
+button.decorado:hover {
   background: linear-gradient(90deg, #005577 0%, #00aaff 100%);
   transform: scale(1.05);
+}
+
+.botao-nao-decorado{
+  all: unset;
+  cursor: pointer;
+  padding: 2px;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(10px);
+  width: 350vw;
+  height: 350vw;
+}
+
+dialog[open] {
+  position: relative;
+  border-radius: 10px;
+  border: none;
+  width: 50%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+
+.pop-up-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: relative;
+  top: 0; 
+  left: 166px;
+  height: 50vh;
+  width: 18vw;
+}
+ 
+dialog[open] h2 {
+   position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+}
+
+dialog[open] button.botao-popup-doacao {
+  position: absolute;
+  top: -26px;
+  right: -26px; 
+  background-color: transparent;
+  border: none;
+  z-index: 10;
+}
+
+dialog[open] button.botao-popup-doacao img {
+  width: 25px;
+  height: 25px;
+}
+
+dialog[open] img {
+  margin: 0;
+  object-fit: contain;
+  width: 320px;
+  height: 320px;
+  position: relative;
+  z-index: -1;
+  bottom: 188px;
 }

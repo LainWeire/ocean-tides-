@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-git push<html lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,22 +8,50 @@ git push<html lang="en">
 </head>
 <body>
 
+<dialog id="doacao-dialog">
+  <h2>Doe para as nossas causas</h2>
+
+  <img src="midia/imagem doacao.jpg" alt="tubarao em meio as algas">
+
+  <button onclick="FecharPopupDoacao()" type="button" class="botao-popup-doacao"><img src="midia/botao fechar.png" > </button>
+
+  <div class="pop-up-container">
+    
+    <p>Faça sua doação para proteger a vida marinha.</p>
+  </div>
+</dialog>
+ 
+
+<script>
+  const dialog = document.getElementById("doacao-dialog")
+  const botao = document.getElementById("botao-doacao");
+
+
+  function AbrirPopupDoacao() {
+    dialog.showModal()
+  }
+
+  function FecharPopupDoacao() {
+    dialog.close()
+  }
+
+</script>
+
 <div class="video-container">
   <video autoplay muted loop class="video-bg">
     <source src="midia/sea footage loop.mp4" type="video/mp4" />
     Seu navegador não suporta vídeo em HTML5.
   </video>
-
   <header class="secao-banner">
     <div class="navegacao-barra">
       <a href="pagina-inicial.html"><img src="midia/logo.png" class="logo" ></a>
       <div class="navegacao">
         <nav>
           <ul>
-            <li><a href="#">Sobre Nós</a></li>
-            <li><a href="#">Newsletter</a></li>
-            <li><a href="#">Loja</a></li>
-            <li><a href="#">Contribuir</a></li>
+            <li><button class="botao-nao-decorado" href="#">Sobre Nós</button></li>
+            <li><button class="botao-nao-decorado" href="#">Newsletter</button></li>
+            <li><button class="botao-nao-decorado" href="#">Loja</button></li>
+            <li><button class="botao-nao-decorado" type="button" onclick = AbrirPopupDoacao() class="botao-nao-decorado" type="submit">Doe</li>
           </ul>
         </nav>
       </div>
@@ -51,7 +79,7 @@ git push<html lang="en">
         Ajude-nos a acabar com isso, assine agora.
       </p>
 
-      <a href="https://savedolphins.eii.org/take-action/take-action-save-japan-dolphins"><button>Abaixo assinado da SaveDolphins</button></a>
+      <a href="https://savedolphins.eii.org/take-action/take-action-save-japan-dolphins"><button class="decorado">Abaixo assinado da SaveDolphins</button></a>
     </div>
   </div>
 </div>
