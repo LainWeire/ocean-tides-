@@ -35,7 +35,7 @@ img.logo {
 }
 
 .navegacao {
-  font-size: 0.7vw;
+  font-size: clamp(12px, 0.7vw, 16px);
   max-width: 80vw;
   height: 4vh;
   border: 1px solid white;
@@ -213,18 +213,19 @@ dialog::backdrop {
 
 dialog[open] {
   position: relative;
-  border-radius: 10px;
   border: none;
-  width: 50%;
+  width: 60%;
   height: 60%;
   display: flex;
-  justify-content: center;
+  justify-content:space-around;
   align-items: center;
   overflow: visible;
+  background-color: transparent;
+  padding: 0;
 }
 
 
-.pop-up-container {
+.pop-up-container-esq {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -233,11 +234,27 @@ dialog[open] {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  position: relative;
+  position:relative;
   top: 0; 
-  left: 166px;
-  height: 50vh;
-  width: 18vw;
+  height: 80vh;
+  width: 28vw;
+  overflow: hidden;
+}
+
+.pop-up-container-dir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position:relative;
+  top: 0; 
+  height: 80vh;
+  width: 20vw;
+  overflow: hidden;
 }
  
 dialog[open] h2 {
@@ -257,16 +274,21 @@ dialog[open] button.botao-popup-doacao {
 }
 
 dialog[open] button.botao-popup-doacao img {
-  width: 25px;
-  height: 25px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  z-index: 9999;
 }
 
-dialog[open] img {
-  margin: 0;
+img.img-popup-doacao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  width: 320px;
-  height: 320px;
-  position: relative;
-  z-index: -1;
-  bottom: 188px;
+  z-index: 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
